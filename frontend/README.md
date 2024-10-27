@@ -1,8 +1,25 @@
-# React + Vite
+# Frontend - Desafío Fullstack Infobae
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es la implementación del frontend para el desafío fullstack de Infobae, desarrollado con React, en donde te vas a encontrar con un BlogPost con conexion a Mongo DB y Google Auth.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
+- **React**
+- **Tailwind**
+- **Axios**
+- **React Router**
+- **Google Auth**
+## Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sigue estos pasos para clonar el proyecto y configurarlo en tu entorno local:
+
+```bash
+# Clona el repositorio
+git clone https://github.com/FabianDaSilva/FullStack-Infobae
+
+# Entra en el directorio del proyecto
+cd FullStack-Infobae/frontend
+
+# Instala las dependencias
+Configuración de variables de entorno
+
+Utilice variables de entorno para la configuración de datos sensibles. Podes revisar y completar el archivo .env_example que se encuentra en el repositorio, renombrándolo como .env y ajustando sus valores según tu entorno de desarrollo.

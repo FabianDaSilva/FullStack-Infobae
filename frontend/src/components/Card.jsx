@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ posts }) => {
+const Card = ({ posts, handleTagClick }) => {
     // console.log(posts)
     return (
         <>
@@ -9,7 +9,9 @@ const Card = ({ posts }) => {
                     <div className="p-4">
                         <div className="flex flex-wrap gap-2 mb-4">
                             {post.tags.map((tag, index) => (
-                                <button key={index} className="bg-orange-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                                <button key={index} className="bg-orange-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                                onClick={() => handleTagClick(tag)}
+                                >
                                     {tag}
                                 </button>
                             ))}
