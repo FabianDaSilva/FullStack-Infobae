@@ -26,14 +26,16 @@ const Register = () => {
 
         axios.post('http://localhost:3000/api/users', dataForm)
             .then((response) => {
-                console.log(response);
-                // TODO: Necesito cambiar el back para que me devuelva el token
+                // console.log(response);                
                 setDataForm({
                     name: '',
                     email: '',
                     password: ''
                 });
-                navigate('/profile');
+                if (response.data.token) {
+                    localStorage.setItem('token', response.data.token);
+                    navigate('/profile');
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -50,16 +52,14 @@ const Register = () => {
                     buttonText="Sign In with Google"
                     onSuccess={credentialResponse => {
                         if (credentialResponse.credential) {
-                            console.log(credentialResponse);
+                            // console.log(credentialResponse);
                             localStorage.setItem('token', credentialResponse.credential);
                             navigate('/profile');
 
-                        } else {
-                            console.log('No credential found in response');
                         }
                     }}
                     onError={() => {
-                        console.log('Login Failed');
+                        console.warn('Login Failed');
                     }}
                     useOneTap
                 />
