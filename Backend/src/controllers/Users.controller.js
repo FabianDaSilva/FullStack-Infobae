@@ -1,4 +1,6 @@
 const userModel = require('../models/user.model');
+const jwt = require("jsonwebtoken");
+
 
 const postUser = async (req, res) => {
     try {
@@ -10,9 +12,16 @@ const postUser = async (req, res) => {
 
         const result = await userModel.create(newUser);
 
+        const token = jwt.sign(
+            { id: result._id, email: result.email },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        );
+
         res.status(201).json(payload = {
             message: 'Usuario creado exitosamente',
-            data: result
+            data: result,
+            token: token
         });
 
     } catch (error) {
