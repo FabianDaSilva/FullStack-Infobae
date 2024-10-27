@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({hide}) => {
     return (
         <nav className="w-full h-16 flex items-center justify-between px-4">
             <div className="flex-1 flex justify-start">
